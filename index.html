@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SLBNow, LLC — Senior IT Program Management & Project Governance</title>
+<meta name="description" content="SLBNow, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) providing senior IT program management and project governance for government agencies and prime contractors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -14,14 +15,12 @@
     --gold-light: #E4AF4E;
     --cream: #F5F0E8;
     --white: #FFFFFF;
-    --gray-light: #E8E4DC;
     --gray-mid: #9A9590;
     --red-accent: #B03A2E;
     --text-dark: #1A1612;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -31,202 +30,224 @@
     overflow-x: hidden;
   }
 
-  /* ── HEADER / HERO ── */
-  header {
+  /* ── NAV ── */
+  nav {
     background: var(--navy);
-    position: relative;
-    overflow: hidden;
-    padding: 0;
-  }
-
-  header::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -80px;
-    width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(201,146,42,0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  header::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
-  }
-
-  .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 48px;
     border-bottom: 1px solid rgba(201,146,42,0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
 
   .nav-logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: var(--white);
     letter-spacing: 0.08em;
+    text-decoration: none;
   }
 
-  .nav-logo span {
-    color: var(--gold);
-  }
+  .nav-logo span { color: var(--gold); }
 
-  .nav-badges {
+  .nav-links {
     display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
+    gap: 32px;
+    list-style: none;
   }
 
-  .badge {
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 48px 88px;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,146,42,0.13) 0%, transparent 68%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
     font-family: 'DM Mono', monospace;
     font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    padding: 5px 10px;
-    border: 1px solid var(--gold);
-    color: var(--gold-light);
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-  }
-
-  .hero {
-    padding: 64px 48px 72px;
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 48px;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 10px;
   }
 
-  .hero-headline {
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.8rem, 5vw, 4.8rem);
-    line-height: 0.95;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 0.93;
     color: var(--white);
     letter-spacing: 0.02em;
+    margin-bottom: 24px;
   }
 
-  .hero-headline em {
+  h1 em {
     font-style: normal;
     color: var(--gold);
   }
 
   .hero-sub {
-    font-family: 'Source Serif 4', serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 300;
     font-style: italic;
-    color: rgba(245,240,232,0.75);
-    margin-top: 16px;
-    line-height: 1.6;
-    max-width: 560px;
+    color: rgba(245,240,232,0.72);
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 36px;
   }
 
-  .hero-cta {
-    margin-top: 32px;
+  .hero-actions {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
   }
 
-  .btn-primary {
-    display: inline-block;
+  .btn-gold {
     background: var(--gold);
     color: var(--navy);
     font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 14px 28px;
     text-decoration: none;
     transition: background 0.2s, transform 0.15s;
+    display: inline-block;
   }
 
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
-  .btn-ghost {
-    display: inline-block;
+  .btn-outline {
     border: 1px solid rgba(201,146,42,0.5);
     color: var(--gold-light);
     font-family: 'DM Mono', monospace;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 14px 28px;
     text-decoration: none;
     transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
   }
 
-  .btn-ghost:hover { border-color: var(--gold); color: var(--white); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--white); }
 
-  .hero-info-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,146,42,0.3);
-    padding: 28px 24px;
-  }
-
-  .hero-info-card .label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .info-row {
+  /* Cert stack */
+  .cert-stack {
     display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    font-size: 0.82rem;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
   }
 
-  .info-row:last-child { border-bottom: none; }
-
-  .info-row .k {
-    color: var(--gray-mid);
+  .cert-chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,146,42,0.35);
+    padding: 10px 16px;
     font-family: 'DM Mono', monospace;
     font-size: 0.68rem;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  .info-row .v {
-    color: var(--cream);
-    font-weight: 400;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
+  .cert-chip::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 0.75rem;
   }
+
+  .cert-ids {
+    margin-top: 6px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .cert-ids .id-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+  }
+
+  .cert-ids .id-row .k { color: var(--gray-mid); text-transform: uppercase; }
+  .cert-ids .id-row .v { color: rgba(245,240,232,0.7); }
 
   /* ── NAICS BAR ── */
   .naics-bar {
     background: var(--navy-mid);
-    padding: 16px 48px;
-    border-top: 1px solid rgba(201,146,42,0.2);
-    border-bottom: 3px solid var(--gold);
+    padding: 15px 48px;
+    border-bottom: 1px solid rgba(201,146,42,0.2);
   }
 
   .naics-inner {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    gap: 32px;
+    gap: 28px;
     align-items: baseline;
     flex-wrap: wrap;
   }
 
   .naics-label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
@@ -235,96 +256,82 @@
 
   .naics-codes {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: rgba(245,240,232,0.65);
-    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+    color: rgba(245,240,232,0.55);
+    letter-spacing: 0.04em;
   }
 
-  /* ── SECTION COMMON ── */
+  /* ── SECTIONS ── */
   section { padding: 80px 48px; }
 
-  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
 
-  .section-eyebrow {
+  .eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.63rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 10px;
+    margin-bottom: 14px;
   }
 
-  .section-eyebrow::before {
+  .eyebrow::before {
     content: '';
     display: block;
-    width: 32px;
+    width: 28px;
     height: 2px;
     background: var(--gold);
   }
 
-  .section-title {
+  h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
     letter-spacing: 0.04em;
     line-height: 1;
     color: var(--navy);
     margin-bottom: 48px;
   }
 
-  /* ── CORE COMPETENCIES ── */
+  /* ── COMPETENCIES ── */
   #competencies { background: var(--cream); }
 
   .comp-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3px;
   }
 
   .comp-card {
     background: var(--white);
-    padding: 32px 28px;
+    padding: 32px 26px;
     border-top: 3px solid var(--navy);
-    transition: border-color 0.2s, transform 0.2s;
-    position: relative;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
   }
 
   .comp-card:hover {
     border-color: var(--gold);
     transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(11,31,58,0.1);
   }
 
-  .comp-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 0;
-    background: var(--gold);
-    transition: height 0.2s;
+  .comp-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: rgba(201,146,42,0.15);
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
   }
-
-  .comp-card:hover::after { height: 3px; }
-
-  .comp-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .comp-icon svg { width: 20px; height: 20px; fill: var(--gold); }
 
   .comp-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.35rem;
-    letter-spacing: 0.05em;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
     color: var(--navy);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     line-height: 1.1;
   }
 
@@ -332,14 +339,14 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
   }
 
   .comp-list li {
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-size: 0.84rem;
+    line-height: 1.55;
     color: #3A3530;
-    padding-left: 16px;
+    padding-left: 14px;
     position: relative;
   }
 
@@ -348,13 +355,33 @@
     position: absolute;
     left: 0;
     color: var(--gold);
-    font-weight: 600;
   }
 
-  /* ── PAST PERFORMANCE ── */
+  /* ── PERFORMANCE ── */
   #performance { background: var(--navy); }
+  #performance h2 { color: var(--white); }
 
-  #performance .section-title { color: var(--white); }
+  .perf-disclaimer {
+    background: rgba(176,58,46,0.1);
+    border-left: 3px solid var(--red-accent);
+    padding: 12px 18px;
+    margin-bottom: 36px;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.5;
+  }
+
+  .perf-disclaimer strong {
+    font-style: normal;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #D4786E;
+    display: block;
+    margin-bottom: 4px;
+  }
 
   .perf-table {
     width: 100%;
@@ -367,342 +394,355 @@
 
   .perf-table thead th {
     font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--gold);
-    padding: 0 20px 16px 0;
+    padding: 0 20px 14px 0;
     text-align: left;
-    white-space: nowrap;
   }
 
   .perf-table tbody tr {
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
     transition: background 0.15s;
   }
 
-  .perf-table tbody tr:hover {
-    background: rgba(201,146,42,0.07);
-  }
+  .perf-table tbody tr:hover { background: rgba(201,146,42,0.06); }
 
   .perf-table tbody td {
     padding: 20px 20px 20px 0;
     vertical-align: top;
-    font-size: 0.88rem;
-    color: rgba(245,240,232,0.85);
-    line-height: 1.6;
+    font-size: 0.87rem;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.65;
   }
 
   .perf-table tbody td:first-child {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
     color: var(--white);
-    white-space: nowrap;
+    width: 200px;
     padding-right: 28px;
-    width: 220px;
   }
 
   .perf-type {
     display: inline-block;
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 3px 8px;
-    border: 1px solid rgba(201,146,42,0.4);
+    padding: 3px 7px;
+    border: 1px solid rgba(201,146,42,0.35);
     color: var(--gold-light);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
-  /* ── WHY SLBNOW ── */
+  /* ── WHY ── */
   #why { background: var(--cream); }
 
   .why-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 3px;
   }
 
   .why-card {
     background: var(--white);
-    padding: 36px 32px;
+    padding: 36px 28px;
     border-left: 4px solid var(--navy);
-    position: relative;
-    overflow: hidden;
   }
 
-  .why-card::before {
-    content: '★';
-    position: absolute;
-    top: -8px; right: 16px;
-    font-size: 4rem;
-    color: rgba(201,146,42,0.08);
-    line-height: 1;
-  }
+  .why-card:hover { border-color: var(--gold); }
 
-  .why-card-title {
+  .why-stat {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
+    font-size: 3rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .why-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
     letter-spacing: 0.04em;
     color: var(--navy);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     line-height: 1.1;
   }
 
-  .why-card-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-
   .why-card p {
-    font-size: 0.9rem;
+    font-size: 0.87rem;
     line-height: 1.65;
     color: #3A3530;
   }
 
-  /* ── CONTACT / CTA ── */
-  #contact {
-    background: var(--navy);
-    padding: 80px 48px;
-  }
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+  #contact h2 { color: var(--white); }
 
-  .contact-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+  .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    gap: 56px;
     align-items: start;
   }
-
-  #contact .section-title { color: var(--white); margin-bottom: 24px; }
 
   .contact-promise {
     font-size: 1rem;
     font-style: italic;
-    color: rgba(245,240,232,0.7);
-    line-height: 1.7;
-    margin-bottom: 36px;
+    color: rgba(245,240,232,0.68);
+    line-height: 1.75;
     border-left: 3px solid var(--gold);
     padding-left: 20px;
+    margin-bottom: 36px;
   }
 
-  .contact-details {
+  .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
+    margin-bottom: 32px;
   }
 
-  .contact-item {
+  .c-row {
     display: flex;
     gap: 16px;
-    align-items: flex-start;
+    align-items: baseline;
   }
 
-  .contact-item .c-label {
+  .c-label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--gold);
-    min-width: 60px;
-    padding-top: 3px;
+    min-width: 64px;
   }
 
-  .contact-item .c-val {
+  .c-val {
+    font-size: 0.92rem;
     color: var(--cream);
-    font-size: 0.95rem;
     text-decoration: none;
   }
 
-  .contact-item .c-val:hover { color: var(--gold-light); }
+  .c-val:hover { color: var(--gold-light); }
 
-  .avail-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,146,42,0.35);
-    padding: 32px 28px;
+  /* Contact Form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
 
-  .avail-box h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    margin-bottom: 16px;
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
   }
 
-  .avail-box p {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: rgba(245,240,232,0.75);
-    margin-bottom: 24px;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .avail-box .sdvosb-note {
+  .form-group label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--gold-light);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,146,42,0.3);
+    color: var(--cream);
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    padding: 11px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(245,240,232,0.25);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-group select option {
+    background: var(--navy);
+    color: var(--cream);
+  }
+
+  .form-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
     letter-spacing: 0.06em;
+    color: rgba(245,240,232,0.4);
     line-height: 1.5;
+  }
+
+  .form-success {
+    display: none;
+    background: rgba(201,146,42,0.1);
+    border: 1px solid var(--gold);
+    padding: 18px 20px;
+    color: var(--gold-light);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 8px;
   }
 
   /* ── FOOTER ── */
   footer {
-    background: #070F1D;
-    padding: 28px 48px;
+    background: #060E1C;
+    padding: 26px 48px;
     border-top: 2px solid var(--gold);
   }
 
   .footer-inner {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
   }
 
   .footer-logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     color: var(--white);
     letter-spacing: 0.08em;
+    text-decoration: none;
   }
 
   .footer-logo span { color: var(--gold); }
 
-  .footer-meta {
+  .footer-right {
     font-family: 'DM Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     color: var(--gray-mid);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
+    line-height: 1.8;
     text-align: right;
   }
 
-  /* ── NOTICE BANNER ── */
-  .notice-banner {
-    background: rgba(176,58,46,0.12);
-    border-left: 4px solid var(--red-accent);
-    padding: 14px 24px;
-    margin-bottom: 40px;
-    font-size: 0.82rem;
-    font-style: italic;
-    color: #3A3530;
-    line-height: 1.5;
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  .notice-banner strong {
-    font-style: normal;
-    color: var(--red-accent);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 4px;
-  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding: 48px 24px 56px; }
-    .hero-info-card { display: none; }
-    .why-grid { grid-template-columns: 1fr; }
-    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    nav { padding: 14px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 24px 64px; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .cert-stack { flex-direction: row; flex-wrap: wrap; min-width: unset; }
     section { padding: 56px 24px; }
-    .nav-bar { padding: 16px 24px; }
     .naics-bar { padding: 14px 24px; }
-    footer { padding: 24px; }
-    .footer-inner { flex-direction: column; align-items: flex-start; }
-    .footer-meta { text-align: left; }
-    .perf-table tbody td:first-child { width: auto; white-space: normal; }
+    .why-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 22px 24px; }
+    .footer-right { text-align: left; }
   }
 
   @media (max-width: 600px) {
-    .nav-badges { display: none; }
-    .perf-table { display: block; overflow-x: auto; }
+    .form-row { grid-template-columns: 1fr; }
     .comp-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ── FADE IN ANIMATION ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+    .perf-table { display: block; overflow-x: auto; }
+    .perf-table tbody td:first-child { width: auto; }
+    .cert-stack { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <nav class="nav-bar">
-    <div class="nav-logo">SLB<span>Now</span>, LLC</div>
-    <div class="nav-badges">
-      <span class="badge">✓ SDVOSB</span>
-      <span class="badge">✓ SBA VetCert</span>
-      <span class="badge">✓ VCE Florida</span>
-      <span class="badge">✓ SAM.gov Active</span>
-    </div>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">SLB<span>Now</span></a>
+  <ul class="nav-links">
+    <li><a href="#competencies">Capabilities</a></li>
+    <li><a href="#performance">Past Performance</a></li>
+    <li><a href="#why">Why SLBNow</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-headline">
-        Senior IT<br>
-        Program<br>
-        <em>Management</em><br>
-        & Governance
-      </div>
-      <p class="hero-sub">For government agencies and prime contractors who need programs that run on schedule, stay compliant, and get delivered — not managed.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn-primary">Schedule 30 Minutes</a>
-        <a href="#competencies" class="btn-ghost">Our Capabilities</a>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Service-Disabled Veteran-Owned Small Business</div>
+      <h1>Senior IT<br>Program<br><em>Management</em><br>&amp; Governance</h1>
+      <p class="hero-sub">For government agencies and prime contractors who need programs that run on schedule, stay compliant, and get delivered — not just managed.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-gold">Start a Conversation</a>
+        <a href="#competencies" class="btn-outline">View Capabilities</a>
       </div>
     </div>
-    <div class="hero-info-card">
-      <span class="label">Company Details</span>
-      <div class="info-row"><span class="k">Location</span><span class="v">Hudson, FL 34667</span></div>
-      <div class="info-row"><span class="k">UEI</span><span class="v">REGJEVNLMM17</span></div>
-      <div class="info-row"><span class="k">CAGE</span><span class="v">9TQE9</span></div>
-      <div class="info-row"><span class="k">Phone</span><span class="v">727-877-7601</span></div>
-      <div class="info-row"><span class="k">Email</span><span class="v">sales@slbnow.com</span></div>
-      <div class="info-row"><span class="k">Web</span><span class="v">www.slbnow.com</span></div>
+    <div class="cert-stack">
+      <div class="cert-chip">SDVOSB Certified</div>
+      <div class="cert-chip">VCE — Florida</div>
+      <div class="cert-chip">SAM.gov Registered</div>
+      <div class="cert-ids">
+        <div class="id-row"><span class="k">UEI</span><span class="v">REGJEVNLMM17</span></div>
+        <div class="id-row"><span class="k">CAGE</span><span class="v">9TQE9</span></div>
+        <div class="id-row"><span class="k">Location</span><span class="v">Hudson, FL</span></div>
+      </div>
     </div>
   </div>
-</header>
+</div>
 
 <!-- NAICS BAR -->
 <div class="naics-bar">
   <div class="naics-inner">
     <span class="naics-label">NAICS</span>
     <span class="naics-codes">541512 &bull; 541519 &bull; 541618 &bull; 541611 &bull; 561110 &bull; 621399</span>
-    <span class="naics-label" style="margin-left:24px;">PSC</span>
+    <span class="naics-label" style="margin-left:20px;">PSC</span>
     <span class="naics-codes">D304 &bull; D310 &bull; R408 &bull; R499 &bull; Q201 &bull; Q999</span>
   </div>
 </div>
 
-<!-- CORE COMPETENCIES -->
+<!-- COMPETENCIES -->
 <section id="competencies">
   <div class="section-inner">
-    <div class="section-eyebrow">What We Do</div>
-    <div class="section-title">Core Competencies</div>
-
+    <div class="eyebrow">What We Do</div>
+    <h2>Core Competencies</h2>
     <div class="comp-grid">
 
       <div class="comp-card fade-up">
-        <div class="comp-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
+        <div class="comp-num">01</div>
         <div class="comp-title">IT Program Management</div>
         <ul class="comp-list">
           <li>IT programs run on schedule — requirements tracked, milestones met, risks resolved</li>
@@ -713,10 +753,8 @@
       </div>
 
       <div class="comp-card fade-up">
-        <div class="comp-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div class="comp-title">Project & Compliance Governance</div>
+        <div class="comp-num">02</div>
+        <div class="comp-title">Project &amp; Compliance Governance</div>
         <ul class="comp-list">
           <li>Projects stay accountable — RAID logs current, owners assigned, issues closed</li>
           <li>Compliance maintained — corrective action plans written, executed, and evidence-documented</li>
@@ -726,12 +764,10 @@
       </div>
 
       <div class="comp-card fade-up">
-        <div class="comp-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
+        <div class="comp-num">03</div>
         <div class="comp-title">Clinical Program Support</div>
         <ul class="comp-list">
-          <li>Clinical programs open compliant — protocols established by an active RN and CIP</li>
+          <li>Clinical programs opened compliant — protocols established by an active RN and CIP</li>
           <li>Staff trained and documented — competency records complete before regulators visit</li>
           <li>Infection prevention governed — surveillance active, findings tracked, actions closed</li>
           <li>Quality committees run — findings documented, corrective actions assigned and verified</li>
@@ -739,13 +775,11 @@
       </div>
 
       <div class="comp-card fade-up">
-        <div class="comp-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3m-4 11v-5l9-4-9-4v5l-5 2 5 2z"/></svg>
-        </div>
-        <div class="comp-title">Logistics & Execution Coordination</div>
+        <div class="comp-num">04</div>
+        <div class="comp-title">Logistics &amp; Execution Coordination</div>
         <ul class="comp-list">
           <li>Supplies and equipment at the right location on the right day — no program delays</li>
-          <li>Vendors held to schedule — delays identified and resolved before they impact delivery</li>
+          <li>Vendors held to schedule — delays identified and resolved before impacting delivery</li>
           <li>Activation timelines protected — every delivery, crew, and installation sequenced</li>
           <li>Program managers always know what is moving — logistics status reported weekly</li>
         </ul>
@@ -758,12 +792,12 @@
 <!-- PAST PERFORMANCE -->
 <section id="performance">
   <div class="section-inner">
-    <div class="section-eyebrow" style="color: var(--gold-light);">Proven Track Record</div>
-    <div class="section-title">Past Performance</div>
+    <div class="eyebrow" style="color: var(--gold-light);">Proven Track Record</div>
+    <h2>Past Performance</h2>
 
-    <div class="notice-banner fade-up">
+    <div class="perf-disclaimer fade-up">
       <strong>Note</strong>
-      No federal contracts held to date. Past performance reflects commercial and military engagements.
+      No federal contracts held to date. Past performance reflects commercial and military engagements demonstrating directly applicable program management capability.
     </div>
 
     <div style="overflow-x: auto;">
@@ -778,23 +812,23 @@
         <tbody>
           <tr class="fade-up">
             <td>U.S. Air Force</td>
-            <td><span class="perf-type">Military / Federal</span></td>
-            <td>System Administrator, 7 years. Deployed with CSC contractor to ~4 military installations (CONUS & Asia-Pacific) to install and operationalize C2IPS command and control systems.</td>
+            <td><span class="perf-type">Military</span></td>
+            <td>System Administrator, 7 years. Deployed to ~4 military installations (CONUS &amp; Asia-Pacific) to install and operationalize C2IPS command and control systems.</td>
           </tr>
           <tr class="fade-up">
             <td>Edwards Vacuum / Atlas Copco</td>
             <td><span class="perf-type">Commercial</span></td>
-            <td>IT Service Manager, 15 years. $72M budget, 15,000 users, 13 sites managed. Improved SLA 92%→96.9%. Led 10 M&A IT integrations (100% on time/budget). Built out 3 production facilities ($20M each). Recovered $525K through contract audit. Oracle-to-SAP migration: $1.5M documented savings.</td>
+            <td>IT Service Manager, 15 years. $72M budget, 15,000 users, 13 sites managed. Improved SLA 92%→96.9%. Led 10 M&amp;A IT integrations (100% on time/budget). Built 3 production facilities ($20M each). Recovered $525K through contract audit. Oracle-to-SAP migration: $1.5M documented savings.</td>
           </tr>
           <tr class="fade-up">
             <td>BrightPlanIT, Inc.</td>
             <td><span class="perf-type">Commercial</span></td>
-            <td>Consultant/Trainer. Led IT migration of 156 bank branches across NY and PA. Managed project planning, vendor coordination, budget, and delivery governance for multi-site financial services client.</td>
+            <td>Led IT migration of 156 bank branches across NY and PA. Managed project planning, vendor coordination, budget, and delivery governance for multi-site financial services client.</td>
           </tr>
           <tr class="fade-up">
             <td>Santander / JPMorgan Chase</td>
             <td><span class="perf-type">Commercial</span></td>
-            <td>Compliance & remediation program governance across regulated financial environments. RAID management, audit-ready documentation, corrective action execution under federal regulatory oversight (OCC, CFPB).</td>
+            <td>Compliance and remediation program governance across regulated financial environments. RAID management, audit-ready documentation, corrective action execution under federal regulatory oversight (OCC, CFPB).</td>
           </tr>
         </tbody>
       </table>
@@ -805,27 +839,26 @@
 <!-- WHY SLBNOW -->
 <section id="why">
   <div class="section-inner">
-    <div class="section-eyebrow">Why Us</div>
-    <div class="section-title">Why SLBNow</div>
-
+    <div class="eyebrow">Why SLBNow</div>
+    <h2>Senior Experience. Small Business Value.</h2>
     <div class="why-grid">
 
       <div class="why-card fade-up">
-        <div class="why-card-title">Scott + Michael Lead Every Engagement</div>
-        <div class="why-card-sub">30 yrs IT | 15 yrs Compliance</div>
-        <p>Every engagement is led by Scott Bacon — 30 years IT program management — and supported by Michael Stevens — 15 years compliance governance. You get two senior practitioners on your program, not a project manager and a junior analyst.</p>
+        <div class="why-stat">45+</div>
+        <div class="why-title">Years Combined IT &amp; Compliance Experience</div>
+        <p>Every engagement is led by senior practitioners — 30 years IT program management paired with 15 years compliance governance. You get senior-level execution on your program, not a junior team at senior rates.</p>
       </div>
 
       <div class="why-card fade-up">
-        <div class="why-card-title">Active RN, MSN, and CIP on Staff</div>
-        <div class="why-card-sub">Theresa Caridad, RN, MSN, CIP</div>
-        <p>Theresa Caridad holds an active Florida RN license, MSN, and Certified Infection Preventionist credential. When a healthcare program needs clinical governance, SLBNow has a credentialed clinician — not a consultant who read the guidelines.</p>
+        <div class="why-stat">RN</div>
+        <div class="why-title">Active Clinical Credentials On Staff</div>
+        <p>When a healthcare program needs clinical governance, SLBNow has a credentialed clinician on staff — active Florida RN license, MSN, and Certified Infection Preventionist (CIP). Not a consultant who read the guidelines.</p>
       </div>
 
       <div class="why-card fade-up">
-        <div class="why-card-title">SDVOSB Pricing. Senior Performance.</div>
-        <div class="why-card-sub">$72M Budgets. 10 Acquisitions. 156 Sites.</div>
-        <p>We have governed $72M budgets, 10 acquisitions, and 156-site deployments. Agencies and primes receive that depth of senior experience at SDVOSB small business pricing — without large firm overhead or junior staff at senior rates.</p>
+        <div class="why-stat">$72M</div>
+        <div class="why-title">SDVOSB Pricing. Proven Scale.</div>
+        <p>We have governed $72M budgets, 10 acquisitions, and 156-site deployments. Agencies and primes receive that depth of experience at SDVOSB small business pricing — without large-firm overhead. Every dollar paid counts toward your SDVOSB subcontracting obligation.</p>
       </div>
 
     </div>
@@ -833,51 +866,68 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="padding: 80px 48px;">
-  <div class="contact-inner">
-    <div>
-      <div class="section-eyebrow" style="color: var(--gold-light);">Get In Touch</div>
-      <div class="section-title" style="color: var(--white); margin-bottom: 24px;">Tell Us the Problem.</div>
-      <p class="contact-promise">30 minutes. Specific knowledge of your program, honest answers about our capability, no wasted time. If we are not the right fit we will say so.</p>
-      <div class="contact-details">
-        <div class="contact-item">
-          <span class="c-label">Contact</span>
-          <span class="c-val">Scott Bacon, CEO</span>
-        </div>
-        <div class="contact-item">
-          <span class="c-label">Phone</span>
-          <a href="tel:7278777601" class="c-val">727-877-7601</a>
-        </div>
-        <div class="contact-item">
-          <span class="c-label">Email</span>
-          <a href="mailto:scott.bacon@slbnow.com" class="c-val">scott.bacon@slbnow.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="c-label">Sales</span>
-          <a href="mailto:sales@slbnow.com" class="c-val">sales@slbnow.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="c-label">Location</span>
-          <span class="c-val">Hudson, Florida 34667</span>
-        </div>
-        <div class="contact-item">
-          <span class="c-label">Web</span>
-          <a href="https://www.slbnow.com" class="c-val">www.slbnow.com</a>
-        </div>
-      </div>
-    </div>
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
 
-    <div class="avail-box fade-up">
-      <h3>Available for Subcontracting &amp; Prime Contracts</h3>
-      <p>SLBNow pursues subcontracting opportunities with primes holding IT, healthcare, and program support contracts — and direct awards for IT program management and project governance.</p>
-      <p>Every dollar paid to SLBNow counts toward your SDVOSB subcontracting obligation.</p>
-      <div class="sdvosb-note">
-        SDVOSB — SBA VetCert Certified &nbsp;|&nbsp; VCE — Florida<br>
-        SAM.gov Registered &nbsp;|&nbsp; CAGE: 9TQE9 &nbsp;|&nbsp; UEI: REGJEVNLMM17
+      <div>
+        <div class="eyebrow" style="color: var(--gold-light);">Get In Touch</div>
+        <h2>Tell Us the Problem.</h2>
+        <p class="contact-promise">30 minutes. Specific knowledge of your program, honest answers about our capability, no wasted time. If we are not the right fit, we will say so.</p>
+        <div class="contact-info">
+          <div class="c-row">
+            <span class="c-label">Phone</span>
+            <a href="tel:7278777601" class="c-val">727-877-7601</a>
+          </div>
+          <div class="c-row">
+            <span class="c-label">Email</span>
+            <a href="mailto:sales@slbnow.com" class="c-val">sales@slbnow.com</a>
+          </div>
+          <div class="c-row">
+            <span class="c-label">Location</span>
+            <span class="c-val">Hudson, Florida 34667</span>
+          </div>
+        </div>
+        <div style="margin-top: 8px;">
+          <div class="cert-chip" style="display: inline-flex;">SDVOSB — Open to Subcontracting &amp; Prime Awards</div>
+        </div>
       </div>
-      <div style="margin-top: 28px;">
-        <a href="mailto:scott.bacon@slbnow.com" class="btn-primary">Email Scott Directly</a>
+
+      <div>
+        <!-- FORMSPREE FORM: Replace YOUR_FORM_ID with your actual Formspree ID -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="org">Organization / Agency</label>
+              <input type="text" id="org" name="organization" placeholder="Your organization">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Description of Need</label>
+            <textarea id="message" name="message" placeholder="Tell us about your program or requirement..." required></textarea>
+          </div>
+          <button type="submit" class="btn-gold" style="border: none; cursor: pointer; width: 100%; text-align: center;">Send Message</button>
+          <p class="form-note">We respond within one business day. All inquiries are confidential.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          ✓ Message received. We will be in touch within one business day.
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -885,16 +935,16 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">SLB<span>Now</span>, LLC</div>
-    <div class="footer-meta">
+    <a href="#" class="footer-logo">SLB<span>Now</span>, LLC</a>
+    <div class="footer-right">
       Hudson, Florida 34667 &nbsp;|&nbsp; 727-877-7601 &nbsp;|&nbsp; sales@slbnow.com<br>
-      SDVOSB &bull; SBA VetCert &bull; VCE Florida &bull; SAM.gov Registered
+      SDVOSB &bull; VCE Florida &bull; SAM.gov Registered &bull; CAGE: 9TQE9 &bull; UEI: REGJEVNLMM17
     </div>
   </div>
 </footer>
 
 <script>
-  // Fade-up on scroll
+  // Scroll fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -902,9 +952,33 @@
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Formspree AJAX submission
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        alert('There was a problem sending your message. Please email us directly at sales@slbnow.com');
+      }
+    } catch {
+      alert('There was a problem sending your message. Please email us directly at sales@slbnow.com');
+    }
+  });
 </script>
 </body>
 </html>
