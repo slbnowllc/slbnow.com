@@ -655,8 +655,8 @@
 
   /* ── ANIMATIONS ── */
   .fade-up {
-    opacity: 0;
-    transform: translateY(18px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
@@ -690,7 +690,9 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">SLB<span>Now</span></a>
+  <a href="#" class="nav-logo">
+    <img src="slbnow_logo.png" alt="SLBNow LLC" style="height: 48px; width: auto; display: block;">
+  </a>
   <ul class="nav-links">
     <li><a href="#competencies">Capabilities</a></li>
     <li><a href="#performance">Past Performance</a></li>
@@ -712,8 +714,10 @@
       </div>
     </div>
     <div class="cert-stack">
+      <img src="sdvosb_badge.png" alt="Service-Disabled Veteran-Owned Certified" style="width: 140px; height: auto; margin-bottom: 8px;">
       <div class="cert-chip">SDVOSB Certified</div>
       <div class="cert-chip">VCE — Florida</div>
+
       <div class="cert-ids">
         <div class="id-row"><span class="k">UEI</span><span class="v">REGJEVNLMM17</span></div>
         <div class="id-row"><span class="k">CAGE</span><span class="v">9TQE9</span></div>
@@ -729,7 +733,7 @@
     <span class="naics-label">NAICS</span>
     <span class="naics-codes">541512 &bull; 541519 &bull; 541618 &bull; 541611 &bull; 561110 &bull; 621399</span>
     <span class="naics-label" style="margin-left:20px;">PSC</span>
-    <span class="naics-codes">D304 &bull; D310 &bull; R408 &bull; R499 &bull; Q201 &bull; Q999</span>
+    <span class="naics-codes">DD01 &bull; DF01 &bull; DG01 &bull; DJ01 &bull; R408 &bull; R499 &bull; Q201 &bull; Q999</span>
   </div>
 </div>
 
@@ -812,7 +816,7 @@
           <tr class="fade-up">
             <td>Edwards Vacuum / Atlas Copco</td>
             <td><span class="perf-type">Commercial</span></td>
-            <td>IT Service Manager, 15 years. $72M budget, 15,000 users, 13 sites managed. Improved SLA 92%→96.9%. Led 10 M&amp;A IT integrations (100% on time/budget). Built 3 production facilities ($20M each). Recovered $525K through contract audit. Oracle-to-SAP migration: $1.5M documented savings.</td>
+            <td>IT Service Manager, 15 years. $72M budget, 15,000 users, 13 sites managed. Improved SLA 92%→96.9%. Built 3 production facilities ($20M each). Recovered $525K through contract audit. Oracle-to-SAP migration: $1.5M documented savings.</td>
           </tr>
           <tr class="fade-up">
             <td>BrightPlanIT, Inc.</td>
@@ -875,7 +879,7 @@
           </div>
           <div class="c-row">
             <span class="c-label">Email</span>
-            <a href="mailto:sales@slbnow.com" class="c-val">sales@slbnow.com</a>
+            <a href="/cdn-cgi/l/email-protection#b5c6d4d9d0c6f5c6d9d7dbdac29bd6dad8" class="c-val"><span class="__cf_email__" data-cfemail="d6a5b7bab3a596a5bab4b8b9a1f8b5b9bb">[email&#160;protected]</span></a>
           </div>
           <div class="c-row">
             <span class="c-label">Location</span>
@@ -889,7 +893,7 @@
 
       <div>
         <!-- FORMSPREE FORM: Replace YOUR_FORM_ID with your actual Formspree ID -->
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mykbgjgo" method="POST">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -929,15 +933,17 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <a href="#" class="footer-logo">SLB<span>Now</span>, LLC</a>
+    <a href="#" class="footer-logo">
+      <img src="slbnow_logo.png" alt="SLBNow LLC" style="height: 40px; width: auto; display: block;">
+    </a>
     <div class="footer-right">
-      Hudson, Florida 34667 &nbsp;|&nbsp; 727-877-7601 &nbsp;|&nbsp; sales@slbnow.com<br>
+      Hudson, Florida 34667 &nbsp;|&nbsp; 727-877-7601 &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4231232e273102312e202c2d356c212d2f">[email&#160;protected]</a><br>
       SDVOSB &bull; VCE Florida &bull; CAGE: 9TQE9 &bull; UEI: REGJEVNLMM17
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -964,15 +970,4 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        alert('There was a problem sending your message. Please email us directly at sales@slbnow.com');
-      }
-    } catch {
-      alert('There was a problem sending your message. Please email us directly at sales@slbnow.com');
-    }
-  });
-</script>
-</body>
-</html>
+     
