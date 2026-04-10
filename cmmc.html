@@ -78,7 +78,7 @@
   .nav-cta:hover{background:var(--gold-light)!important;}
   .page-hero{background:var(--navy);padding:80px 48px 90px;border-bottom:4px solid var(--gold);position:relative;overflow:hidden;}
   .page-hero::before{content:'';position:absolute;top:-60px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,146,42,0.11) 0%,transparent 68%);pointer-events:none;}
-  .page-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;}
+  .page-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 280px;gap:56px;align-items:center;}
   .breadcrumb{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,240,232,0.4);margin-bottom:18px;}
   .breadcrumb a{color:rgba(245,240,232,0.4);text-decoration:none;} .breadcrumb a:hover{color:var(--gold-light);} .breadcrumb span{margin:0 8px;}
   .page-eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
@@ -91,7 +91,7 @@
   .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
   .btn-outline{border:1px solid rgba(201,146,42,0.5);color:var(--gold-light);font-family:'DM Mono',monospace;font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:border-color 0.2s,color 0.2s;display:inline-block;}
   .btn-outline:hover{border-color:var(--gold);color:var(--white);}
-  .free-consult-box{background:rgba(201,146,42,0.08);border:1px solid rgba(201,146,42,0.4);padding:24px 28px;min-width:240px;}
+  .free-consult-box{background:rgba(201,146,42,0.08);border:1px solid rgba(201,146,42,0.4);padding:24px 28px;width:100%;}
   .free-consult-label{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
   .free-consult-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);letter-spacing:0.04em;margin-bottom:8px;line-height:1.05;}
   .free-consult-desc{font-size:0.82rem;color:rgba(245,240,232,0.65);line-height:1.6;margin-bottom:16px;}
@@ -432,7 +432,7 @@
         </div>
         <address class="contact-info" style="font-style:normal;">
           <div class="c-row"><span class="c-label">Phone</span><a href="tel:7278777601" class="c-val">727-877-7601</a></div>
-          <div class="c-row"><span class="c-label">Email</span><a href="/cdn-cgi/l/email-protection#0d7e6c61687e4d7e616f63627a236e6260" class="c-val"><span class="__cf_email__" data-cfemail="7300121f160033001f111d1c045d101c1e">[email&#160;protected]</span></a></div>
+          <div class="c-row"><span class="c-label">Email</span><a href="/cdn-cgi/l/email-protection#4c3f2d20293f0c3f202e22233b622f2321" class="c-val"><span class="__cf_email__" data-cfemail="2655474a435566554a444849510845494b">[email&#160;protected]</span></a></div>
           <div class="c-row"><span class="c-label">Location</span><span class="c-val">Hudson, Florida</span></div>
         </address>
       </div>
@@ -477,7 +477,7 @@
       </ul>
     </div>
     <div class="footer-right">
-      Hudson, Florida 34667 &nbsp;|&nbsp; <a href="tel:7278777601">727-877-7601</a> &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#deadbfb2bbad9eadb2bcb0b1a9f0bdb1b3"><span class="__cf_email__" data-cfemail="f380929f9680b3809f919d9c84dd909c9e">[email&#160;protected]</span></a><br>
+      Hudson, Florida 34667 &nbsp;|&nbsp; <a href="tel:7278777601">727-877-7601</a> &nbsp;|&nbsp; <a href="/cdn-cgi/l/email-protection#0b786a676e784b78676965647c25686466"><span class="__cf_email__" data-cfemail="e794868b8294a7948b85898890c984888a">[email&#160;protected]</span></a><br>
       SDVOSB &bull; VCE Florida &bull; CyberAB RPO &bull; CAGE: 9TQE9 &bull; UEI: REGJEVNLMM17<br>
       &copy; <span id="yr"></span> SLBNow LLC. All rights reserved.
     </div>
@@ -485,11 +485,11 @@
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById('yr').textContent = new Date().getFullYear();
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1 });
   if ('IntersectionObserver' in window) {
     document.body.classList.add('js-ready');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   }
   document.querySelectorAll('.faq-q').forEach(btn => {
