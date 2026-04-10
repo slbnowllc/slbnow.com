@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.slbnow.com/sitemap.xml
+Disallow: /drafts/
+Disallow: /admin/
