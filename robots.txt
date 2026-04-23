@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
+User-agent: facebookexternalhit
+Allow: /
+User-agent: Facebot
+Allow: /
 Sitemap: https://www.slbnow.com/sitemap.xml
 Disallow: /drafts/
 Disallow: /admin/
